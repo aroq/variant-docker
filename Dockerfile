@@ -1,8 +1,8 @@
-# Install yq
 FROM mikefarah/yq as yq
-COPY --from=yq /usr/bin/yq /usr/bin/yq
 
 FROM golang:1-alpine
+
+COPY --from=yq /usr/bin/yq /usr/bin/yq
 
 # Install alpine package manifest
 COPY packages.txt /etc/apk/
