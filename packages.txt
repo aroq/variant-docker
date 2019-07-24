@@ -6,3 +6,4 @@ grep
 rsync
 jq
 bash
+openssh-client
