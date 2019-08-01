@@ -8,6 +8,9 @@ COPY --from=yq /usr/bin/yq /usr/bin/yq
 COPY packages.txt /etc/apk/
 RUN apk add --update $(grep -v '^#' /etc/apk/packages.txt)
 
+RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+  direnv
+
 # Install variant
 RUN git clone https://github.com/aroq/variant.git && \
   cd variant && \
