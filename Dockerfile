@@ -13,7 +13,7 @@ ENV VARIANT_VERSION 0.32.0
 RUN curl --fail -sSL -o variant.tar.gz https://github.com/mumoshu/variant/releases/download/v${VARIANT_VERSION}/variant_${VARIANT_VERSION}_linux_386.tar.gz \
     && mkdir -p variant && \
     tar -zxf variant.tar.gz -C variant \
-    && cp variant/variant /usr/local/bin/ \
+    && cp variant/variant /usr/bin/ \
     && rm -fR variant.tar.gz variant \
-    && chmod +x /usr/local/bin/variant
+    && chmod +x /usr/bin/variant
 
