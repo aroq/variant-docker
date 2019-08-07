@@ -6,7 +6,7 @@ COPY --from=yq /usr/bin/yq /usr/bin/yq
 
 # Install alpine package manifest
 COPY packages.txt /etc/apk/
-RUN apk add --update $(grep -v '^#' /etc/apk/packages.txt)
+RUN apk add --no-cache --update $(grep -v '^#' /etc/apk/packages.txt)
 
 # Install variant
 ENV VARIANT_VERSION 0.32.0
