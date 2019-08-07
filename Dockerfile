@@ -1,6 +1,6 @@
 FROM mikefarah/yq as yq
 
-FROM golang:1-alpine
+FROM alpine:3.10.1
 
 COPY --from=yq /usr/bin/yq /usr/bin/yq
 
