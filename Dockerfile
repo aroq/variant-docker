@@ -9,7 +9,7 @@ COPY packages.txt /etc/apk/
 RUN apk add --no-cache --update $(grep -v '^#' /etc/apk/packages.txt)
 
 # Install variant
-ENV VARIANT_VERSION 0.32.0
+ENV VARIANT_VERSION 0.35.1
 RUN curl --fail -sSL -o variant.tar.gz https://github.com/mumoshu/variant/releases/download/v${VARIANT_VERSION}/variant_${VARIANT_VERSION}_linux_386.tar.gz \
     && mkdir -p variant && \
     tar -zxf variant.tar.gz -C variant \
